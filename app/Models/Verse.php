@@ -2,45 +2,48 @@
 
 namespace App\Models;
 
+use App\Services\DatabaseService;
 use App\Helpers;
 
 class Verse
 {
+    /**
+     * Display all verses§
+     *
+     * @return string
+     */
     public function index()
     {
-        $servername = $_ENV['MYSQL_DB_HOST'];
-        $dbname = $_ENV['MYSQL_DB_NAME'];
-        $username  = $_ENV['MYSQL_DB_USER'];
-        $password = $_ENV['MYSQL_DB_PASSWORD'];
+        $db = new DatabaseService;
+        return $this->format($db->query('SELECT verse FROM verses'));
+    }
 
-        $mysqli = new \mysqli($servername, $username, $password, $dbname);
+    /**
+     * Formats verses for output on the website.
+     *
+     * @param Object $result
+     * @return string
+     */
+    protected function format($verses)
+    {
+        if ($verses->num_rows > 0) {
+            $index = 1;
+            $count = 1;
 
-        if ($mysqli->connect_errno) {
-            die("ERROR : -> " . $mysqli->connect_error);
-        }
-
-        $sql = "SELECT verse FROM verses";
-        $result = $mysqli->query($sql);
-
-        if ($result->num_rows > 0) {
-            $i = 1;
-            $c = 1;
-
-            while ($row = $result->fetch_assoc()) {
-                if ($i % 12 == 1) {
-                    $roman_numeral = Helpers::intToRomanNumeral($c);
-                    echo '<h5 id="canto' . $c . '">Canto ' . $roman_numeral . "</h5>";
-                    $c++;
+            while ($row = $verses->fetch_assoc()) {
+                if ($index % 12 == 1) {
+                    $roman_numeral = Helpers::intToRomanNumeral($count);
+                    echo '<h5 id="canto' . $count . '">Canto ' . $roman_numeral . "</h5>";
+                    $count++;
                 }
                 $verse = $row["verse"];
                 $verse = str_replace('”', '', $verse);
                 echo  $verse . "<br>";
 
-                $i++;
+                $index++;
             }
         } else {
             echo "No verses";
         }
-        $mysqli->close();
     }
 }

@@ -12,7 +12,8 @@
     "require": {
         "vlucas/phpdotenv": "^5.4",
         "coderjerk/bird-elephant": "^0.4.3",
-        "symfony/var-dumper": "^5.4"
+        "symfony/var-dumper": "^5.4",
+        "lavary/crunz": "^3.2"
     },
     "autoload": {
         "psr-4": {
