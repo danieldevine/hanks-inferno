@@ -8,29 +8,37 @@ use Coderjerk\BirdElephant\Compose\Tweet;
 
 class TweetService
 {
-    public function sendTweet($img)
+
+    public function credentials()
     {
-        $credentials = array(
+        return array(
             'bearer_token' => $_ENV['TWITTER_BEARER_TOKEN'],
             'consumer_key' => $_ENV['TWITTER_API_KEY'],
             'consumer_secret' => $_ENV['TWITTER_SECRET'],
             'token_identifier' => $_ENV['TWITTER_ACCESS_TOKEN'],
             'token_secret' => $_ENV['TWITTER_ACCESS_TOKEN_SECRET'],
         );
-
-        $twitter = new BirdElephant($credentials);
-
+    }
+    /**
+     * Uploads generated image to Twitter, retrieves
+     * the media id then tweets it out.
+     *
+     * @param string $img
+     * @return void
+     */
+    public function sendImageTweet($img)
+    {
+        $twitter = new BirdElephant($this->credentials);
         $image = $twitter->tweets()->upload($img);
-
-        // //pass the returned media id to a media object as an array
-        $media = (new Media)->mediaIds(
-            [
-                $image->media_id_string
-            ]
-        );
-
+        $media = (new Media)->mediaIds([$image->media_id_string]);
         $tweet = (new Tweet)->media($media);
+        $twitter->tweets()->tweet($tweet);
+    }
 
+    public function sendTextTweet($verse)
+    {
+        $twitter = new BirdElephant($this->credentials);
+        $tweet = (new Tweet)->text($verse);
         $twitter->tweets()->tweet($tweet);
     }
 }
