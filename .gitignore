@@ -2,5 +2,4 @@
 .env
 .DS_STORE
 cleanup-queries.txt
-public/assets/img/*
-
+public/assets/img/verse.png
