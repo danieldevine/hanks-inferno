@@ -29,7 +29,7 @@ class TweetService
             ]
         );
 
-        $tweet = (new Tweet)->text($media);
+        $tweet = (new Tweet)->media($media);
 
         $twitter->tweets()->tweet($tweet);
     }

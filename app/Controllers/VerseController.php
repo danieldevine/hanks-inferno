@@ -22,7 +22,11 @@ class VerseController
         try {
             $tweet = (new TweetService)->sendTweet(__DIR__ . '/../../public/assets/img/verse.png');
         } catch (\Throwable $th) {
-            error_log($th, 3, "/var/tmp/my-errors.log");
+            echo $th->getMessage();
+            echo $th->getCode();
+            echo $th->getFile();
+            echo $th->getLine();
+            error_log($th->getMessage(), 3, "/var/tmp/my-errors.log");
         }
     }
 }
