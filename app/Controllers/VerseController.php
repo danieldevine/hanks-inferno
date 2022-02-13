@@ -5,21 +5,24 @@ namespace App\Controllers;
 use App\Services\VerseService;
 use App\Services\ImageService;
 use App\Services\DatabaseService;
+use App\Services\TweetService;
 
 class VerseController
 {
 
     public function execute()
     {
-        $verse = new VerseService;
-        $verse = $verse->compose();
 
-        $db = new DatabaseService;
-        $db->insert($verse);
+        $verse = (new VerseService)->compose();
 
-        $image = new ImageService;
-        $image = $image->create($verse, 'LibreBaskerville-Regular.ttf');
+        $db = (new DatabaseService)->insert($verse);
 
-        return 'verse created';
+        $image = (new ImageService)->create($verse, 'LibreBaskerville-Regular.ttf');
+
+        try {
+            $tweet = (new TweetService)->sendTweet(__DIR__ . '/../../public/assets/img/verse.png');
+        } catch (\Throwable $th) {
+            error_log($th, 3, "/var/tmp/my-errors.log");
+        }
     }
 }

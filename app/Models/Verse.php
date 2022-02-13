@@ -8,7 +8,7 @@ use App\Helpers;
 class Verse
 {
     /**
-     * Display all verses§
+     * Display all verses
      *
      * @return string
      */
