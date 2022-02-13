@@ -9,7 +9,6 @@ class Controller
 
     public function view($view_name, $data)
     {
-
         require_once __DIR__ . '/../Views/' . $view_name . '.php';
     }
 }

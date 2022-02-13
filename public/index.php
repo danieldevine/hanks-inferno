@@ -2,6 +2,8 @@
 $app = require_once __DIR__ . '/bootstrap.php';
 
 use App\Controllers\HomeController;
+use App\Controllers\VerseController;
+use App\Models\Verse;
 
 $request = $_SERVER['REQUEST_URI'];
 
@@ -9,8 +11,13 @@ switch ($request) {
 
     case '':
     case '/':
-        $controller = new HomeController;
-        $controller->show();
+        $home = new HomeController;
+        $home->show();
+        break;
+
+    case '/create':
+        $controller = new VerseController;
+        $controller->execute();
         break;
 
     default:
