@@ -26,7 +26,7 @@ class TweetService
      * @param string $img
      * @return void
      */
-    public function sendImageTweet($img)
+    public function sendTweet($img)
     {
         $twitter = new BirdElephant($this->credentials);
         $image = $twitter->tweets()->upload($img);

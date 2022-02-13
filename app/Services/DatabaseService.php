@@ -51,7 +51,6 @@ class DatabaseService
         );
 
         $statement->bind_param("s", $verse);
-
         $statement->execute();
         $statement->close();
         $mysqli->close();

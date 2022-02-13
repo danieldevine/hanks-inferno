@@ -5,8 +5,6 @@ namespace App\Services;
 class ImageService
 {
 
-
-
     /**
      * Writes text onto an image
      *
@@ -30,7 +28,6 @@ class ImageService
             // Increment Y so the next line is below the previous line
             $y += 25;
         }
-
 
         return $image;
     }
@@ -57,7 +54,6 @@ class ImageService
     public function create($verse, $font)
     {
         $lines = $this->prepareForImage($verse);
-
 
         header('Content-Type: image/jpeg');
 
