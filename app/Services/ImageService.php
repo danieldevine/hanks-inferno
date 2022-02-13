@@ -5,6 +5,8 @@ namespace App\Services;
 class ImageService
 {
 
+
+
     /**
      * Writes text onto an image
      *
@@ -12,13 +14,23 @@ class ImageService
      * @param  string $text text to overlay
      * @return mixed .png file with image and text overlaid
      */
-    function setText($base_image, $text, $font)
+    function setText($base_image, $lines, $font)
     {
         $image = @imagecreatefromjpeg($base_image);
         $white = imagecolorallocate($image, 255, 255, 255);
         $font  = __DIR__ . '/../../storage/fonts/' . $font;
 
-        imagettftext($image, 12, 0, 20, 70, $white, $font, $text);
+        // Starting Y position
+        $y = 70;
+
+        // Loop through the lines and place them on the image
+        foreach ($lines as $line) {
+            imagettftext($image, 12, 0, 20, $y, $white, $font, $line);
+
+            // Increment Y so the next line is below the previous line
+            $y += 25;
+        }
+
 
         return $image;
     }
@@ -34,22 +46,24 @@ class ImageService
     {
         //prepare for imaging
         $verse = strip_tags($verse);
-        $verse = wordwrap($verse, 44);
+        $verse = wordwrap($verse, 48);
+        $lines = explode(PHP_EOL, $verse);
 
-        return $verse;
+        return $lines;
     }
 
     //LibreBaskerville-Regular.ttf
 
     public function create($verse, $font)
     {
-        $verse = $this->prepareForImage($verse);
+        $lines = $this->prepareForImage($verse);
+
 
         header('Content-Type: image/jpeg');
 
         $blank = __DIR__ . '/../../storage/images/blank.jpg';
 
-        $img = $this->setText($blank, $verse, $font);
+        $img = $this->setText($blank, $lines, $font);
 
         imagepng($img, __DIR__ . '/../../public/assets/img/verse.png');
 
