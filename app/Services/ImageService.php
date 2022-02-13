@@ -51,7 +51,7 @@ class ImageService
 
         $img = $this->setText($blank, $verse, $font);
 
-        imagepng($img, __DIR__ . '/../../storage/images/verse.png');
+        imagepng($img, __DIR__ . '/../../public/assets/img/verse.png');
 
         imagedestroy($img);
     }
