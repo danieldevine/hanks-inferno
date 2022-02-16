@@ -12,10 +12,10 @@ class Verse
      *
      * @return string
      */
-    public function index()
+    public function index($book = 1)
     {
         $db = new DatabaseService;
-        return $this->format($db->query('SELECT verse FROM verses'));
+        return $this->format($db->query("SELECT verse, book FROM verses WHERE book = '" . $book . "'"));
     }
 
     /**

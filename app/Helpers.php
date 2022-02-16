@@ -28,4 +28,9 @@ class Helpers
 
         return $return;
     }
+
+    public static function partial($file_name)
+    {
+        return __DIR__ . '/partials/' . $file_name . '.php';
+    }
 }

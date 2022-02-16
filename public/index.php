@@ -3,7 +3,7 @@ $app = require_once __DIR__ . '/bootstrap.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\VerseController;
-use App\Models\Verse;
+use App\Controllers\PurgatoryController;
 
 $request = $_SERVER['REQUEST_URI'];
 
@@ -11,8 +11,14 @@ switch ($request) {
 
     case '':
     case '/':
+    case '/hell':
         $home = new HomeController;
         $home->show();
+        break;
+
+    case '/purgatory':
+        $purgatory = new PurgatoryController;
+        $purgatory->show();
         break;
 
     case '/create':

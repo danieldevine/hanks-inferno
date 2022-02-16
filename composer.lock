@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e469792754a9e0ed96bca19236c06e4b",
+    "content-hash": "df5b93e4c8777853140fd5021986e47e",
     "packages": [
         {
             "name": "coderjerk/bird-elephant",
@@ -58,6 +58,253 @@
                 }
             ],
             "time": "2022-01-30T15:04:26+00:00"
+        },
+        {
+            "name": "davechild/textstatistics",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DaveChild/Text-Statistics.git",
+                "reference": "e83d5f82726db80e662ae305fce3b3c41299b4f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DaveChild/Text-Statistics/zipball/e83d5f82726db80e662ae305fce3b3c41299b4f5",
+                "reference": "e83d5f82726db80e662ae305fce3b3c41299b4f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "suggest": {
+                "ext-bcmath": "More accurate floating point calculations.",
+                "ext-mbstring": "Handle multi-byte text properly."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "DaveChild\\TextStatistics": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Child",
+                    "email": "dave@addedbytes.com",
+                    "homepage": "https://www.addedbytes.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP package to measure the readability of text according to various algorithms.",
+            "homepage": "https://github.com/DaveChild/Text-Statistics",
+            "support": {
+                "issues": "https://github.com/DaveChild/Text-Statistics/issues",
+                "source": "https://github.com/DaveChild/Text-Statistics/tree/master"
+            },
+            "time": "2018-08-21T08:17:10+00:00"
+        },
+        {
+            "name": "divineomega/is_offensive",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DivineOmega/is_offensive.git",
+                "reference": "f66203ef4c6793bf29b1a42a7cb5f585309ae8e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DivineOmega/is_offensive/zipball/f66203ef4c6793bf29b1a42a7cb5f585309ae8e9",
+                "reference": "f66203ef4c6793bf29b1a42a7cb5f585309ae8e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "snipe/banbuilder": "^2.2.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5",
+                "satooshi/php-coveralls": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DivineOmega\\IsOffensive\\": "src/"
+                },
+                "files": [
+                    "src/IsOffensiveFunction.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Jordan Hall",
+                    "email": "jordan@hall05.co.uk"
+                }
+            ],
+            "description": "This PHP package provides an `is_offensive` helper function. Passing a string to `is_offensive` will return a boolean telling you if it contains offensive words.",
+            "support": {
+                "issues": "https://github.com/DivineOmega/is_offensive/issues",
+                "source": "https://github.com/DivineOmega/is_offensive/tree/master"
+            },
+            "time": "2018-09-13T08:44:09+00:00"
+        },
+        {
+            "name": "divineomega/php-word-info",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DivineOmega/php-word-info.git",
+                "reference": "f7b5becb84e7d73236b2083523324db59cbac322"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DivineOmega/php-word-info/zipball/f7b5becb84e7d73236b2083523324db59cbac322",
+                "reference": "f7b5becb84e7d73236b2083523324db59cbac322",
+                "shasum": ""
+            },
+            "require": {
+                "davechild/textstatistics": "^1.0",
+                "divineomega/is_offensive": "^1.0",
+                "doctrine/inflector": "^1.2",
+                "php": "^7.0",
+                "rapidwebltd/rw-file-cache": "^1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "satooshi/php-coveralls": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DivineOmega\\WordInfo\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Jordan Hall",
+                    "email": "jordan@hall05.co.uk"
+                }
+            ],
+            "description": "PHP library to look up information about words",
+            "support": {
+                "issues": "https://github.com/DivineOmega/php-word-info/issues",
+                "source": "https://github.com/DivineOmega/php-word-info/tree/master"
+            },
+            "time": "2018-02-12T00:21:31+00:00"
+        },
+        {
+            "name": "doctrine/inflector",
+            "version": "1.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9",
+                "reference": "4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^8.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector",
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
+            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
+            "keywords": [
+                "inflection",
+                "inflector",
+                "lowercase",
+                "manipulation",
+                "php",
+                "plural",
+                "singular",
+                "strings",
+                "uppercase",
+                "words"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/inflector/issues",
+                "source": "https://github.com/doctrine/inflector/tree/1.4.4"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-04-16T17:34:40+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1262,6 +1509,109 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "rapidwebltd/rw-file-cache",
+            "version": "v1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rapidwebltd/RW-File-Cache.git",
+                "reference": "4a1d5aaefa6ffafec8e2d60787f12bcd9890977e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rapidwebltd/RW-File-Cache/zipball/4a1d5aaefa6ffafec8e2d60787f12bcd9890977e",
+                "reference": "4a1d5aaefa6ffafec8e2d60787f12bcd9890977e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "rapidweb\\RWFileCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "description": "RW File Cache is a PHP File-based Caching Library. Its syntax is designed to closely resemble the PHP memcache extension.",
+            "homepage": "https://github.com/rapidwebltd/RW-File-Cache",
+            "keywords": [
+                "cache",
+                "caching",
+                "caching library",
+                "file cache",
+                "library",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/rapidwebltd/RW-File-Cache/issues",
+                "source": "https://github.com/rapidwebltd/RW-File-Cache/tree/master"
+            },
+            "time": "2018-01-23T17:20:58+00:00"
+        },
+        {
+            "name": "snipe/banbuilder",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/snipe/banbuilder.git",
+                "reference": "621d6d857400983d0fd6cd291f105a835a317748"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/snipe/banbuilder/zipball/621d6d857400983d0fd6cd291f105a835a317748",
+                "reference": "621d6d857400983d0fd6cd291f105a835a317748",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Snipe\\BanBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "snipe",
+                    "email": "snipe@snipe.net",
+                    "role": "Creator & Developer"
+                }
+            ],
+            "description": "Library to easily handle profanity filtering in PHP projects.",
+            "homepage": "http://banbuilder.com",
+            "keywords": [
+                "filter",
+                "language",
+                "profanity",
+                "strings",
+                "swear"
+            ],
+            "support": {
+                "issues": "https://github.com/snipe/banbuilder/issues",
+                "source": "https://github.com/snipe/banbuilder/tree/2.3.0"
+            },
+            "time": "2018-08-30T22:45:56+00:00"
         },
         {
             "name": "symfony/config",
