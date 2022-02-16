@@ -12,9 +12,9 @@ class VerseController
 
     public function execute()
     {
-
-        $verse = (new VerseService)->compose();
-        $db = (new DatabaseService)->insert($verse);
+        $book = 2;
+        $verse = (new VerseService)->compose($book);
+        $db = (new DatabaseService)->insert($verse, $book);
         $image = (new ImageService)->create($verse, 'LibreBaskerville-Regular.ttf');
 
         try {

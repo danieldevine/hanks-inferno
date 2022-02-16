@@ -11,10 +11,16 @@ class VerseService
      *
      * @return string
      */
-    public function compose()
+    public function compose($book)
     {
         $hank  = file(__DIR__ . "/../../storage/texts/hank.txt");
-        $dante = file(__DIR__ . "/../../storage/texts/inferno.txt");
+
+        if ($book == 1) {
+            $dante = file(__DIR__ . "/../../storage/texts/purgatorio.txt");
+        } else {
+            $dante = file(__DIR__ . "/../../storage/texts/inferno.txt");
+        }
+
 
         $hank1 = $hank[array_rand($hank)];
         $hank2 = $hank[array_rand($hank)];

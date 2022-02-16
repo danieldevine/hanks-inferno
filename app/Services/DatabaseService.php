@@ -47,7 +47,7 @@ class DatabaseService
         }
 
         $statement = $mysqli->prepare(
-            'INSERT INTO verses (verse, book) VALUES (? ?)'
+            'INSERT INTO `verses` (`verse`, `book`) VALUES (?, ?)'
         );
 
         $statement->bind_param("si", $verse, $book);
